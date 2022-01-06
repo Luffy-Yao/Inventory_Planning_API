@@ -75,6 +75,12 @@ class Inventory_Simulation(object):
         profit = revenue - order_costs - holding_costs - unit_costs
 
         return profit
+    
+    def calculate_revenue(self, simulation_data, product_info):
+        
+        return (sum(record.units_sold for record in simulation_data["units_sold"])
+        * product_info["selling_price"]
+    )
 
     def calculate_losses(self, simulation_data, product_info):
         unit_cost = product_info["unit_cost"]
@@ -84,6 +90,16 @@ class Inventory_Simulation(object):
 
         loss = units_lost * (selling_price - unit_cost)
         return loss
+
+    def calculate_proportion_orders_lost(self, simulation_data, product_info): 
+        total_units_lost = sum(
+            record.units_lost for record in simulation_data["units_lost"]
+        )
+        total_units_sold = sum(
+            record.units_sold for record in simulation_data["units_sold"]
+        )
+
+        return total_units_lost / (total_units_sold + total_units_lost)
 
 
     def plot_inventory_graph(self, simulation_data, horizontal_line_info=None):

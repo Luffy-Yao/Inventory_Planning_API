@@ -2,128 +2,39 @@
 <html>
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF=8">
-	<title> Inventory Planning </title>
+    <style>
+        button {
+            background-color: green;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            width: 300px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
 <body>
-	<div class="container">
+    <h2 align="Center">System Control Page</h2>
+    <br>
+    <br>
+    <div class="form-group">
+        <p align="center"><a href=cReview><button>Continuous Review System</button></a></p>
+    </div>
+    <div class="form-group">
+        <p align="center"><a href=pReview><button>Periodic Review System</button></a></p>
+    </div>
 
-		<form id='submit_params' method="POST" action="{{ url_for('submit_new_profile') }}">
-			<div class="form-group">
-				<table class="table">
-					<tr>
-						<td>
-							<p style="text-align:center">
-								<h1> Inventory Planning </h1>
-							</p>
-						</td>
-						<td>
-							<p style="text-align:center">
-								
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<table class="table" border=0>
-								<tr>
-									<td><label for="male">Starting Stock</label></td>
-					
-										<td><input type="number" class="form-control" id="start" placeholder="Enter Starting Stock"
-											name="starting_stock" value="{{selected_startingStock}}">
-									    </td>
-							
-								
-								</tr>
-								<tr>
-									<td><label for="male">Reorder Threshold</label></td>
-									<td><input type="number" class="form-control" id="reorder" placeholder="Enter Reorder Threshold"
-											name="reorder_threshold" value="{{selected_reorderThreshold}}">
-									</td>
-								</tr>
-								<tr>
-									<td><label for="male">Order Fill Amount</label></td>
-									<td>
-										<input type="number" class="form-control" id="order" placeholder="Enter Order Fill Amount"
-											name="order_fill_amount" value="{{selected_orderFillAmount}}">
-									   
-									</td>
-								</tr>
-								<tr>
-									<td><label for="male">Lead Time</label></td>
-									<td>
-										<input type="number" class="form-control" id="lead" placeholder="Enter Lead Time"
-											name="lead_time" value="{{selected_leadTime}}">
-									</td>
-									
-								</tr>
-								<tr>
-									<td><label for="male">Unit Cost</label></td>
-								
-										<td><input type="number" class="form-control" id="unit" placeholder="Enter Unit Cost"
-											name="unit_cost" value="{{selected_unitCost}}">
-									</td>
-									
-								</tr>
-								<tr>
-									<td><label for="male">Selling Price</label></td>
-									
-										<td><input type="number" class="form-control" id="selling" placeholder="Enter Selling Price"
-											name="selling_price" value="{{selected_sellingPrice}}">
-									</td>
-									
-								</tr>
-								<tr>
-									<td><label for="male">Holding Cost</label></td>
-									
-										<td><input type="number" class="form-control" id="holding" placeholder="Enter Holding Cost"
-											name="holding_cost" value="{{selected_holdingCost}}">
-									  </td>
-									
-								</tr>
-								<tr>
-									<td><label for="male">Order Cost</label></td>
-									
-										<td><input type="number" class="form-control" id="orderCost" placeholder="Enter Holding Cost"
-											name="order_cost" value="{{selected_orderCost}}">
-									  </td>
-									
-								</tr>
-	
-
-							</table>
-
-						</td>
-
-						<td>{{model_plot}}
-							<p  style="font-size:160%;">
-								This run of simulation generated a profit of ${{simulated_profit}}. 
-							</p>
-
-							<p style="font-size:160%;">
-								This run of simulation generated a loss of ${{simulated_loss}} due to lack of inventory. 
-							</p>
-						</td>
-						
-							
-						
-					</tr>
-					</tr>
-					<td><button class="btn btn-default" type="submit"> Continuous Review System </button></td><td></td><td></td>
-					<tr>
-					<tr>
-				</table>
-			</div>
-		</form>
-
-	</div>
 </body>
 
 </html>
+
+
+<!-- <p align="center"><a href= cReview><button class='btn btn-primary' style="height:75px;width:150px">Continuous Review System</button></a></p>
+<p align="center"><a href= pReview><button class='btn btn-primary' style="height:75px;width:150px">Periodic Review System</button></a></p> -->
